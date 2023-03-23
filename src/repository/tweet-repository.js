@@ -19,18 +19,30 @@ class TweetRepository {
   }
   async getWithComments(id) {
     try {
-      const tweet = await tweet.findById(id).populate({ path: "comments" });
+      const tweet = await tweet
+        .findById(id)
+        .populate({ path: "comments" })
+        .lean();
     } catch (error) {
       console.log(error);
     }
   }
   async update(tweetId, data) {
     const tweet = await Tweet.findByIdAndUpdate(tweetId, data, { new: true });
+    return tweet;
   }
   async destroy(id) {
     try {
       const tweet = await Tweet.findByIdAndRemove(id);
       return tweet;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getAll(offset, limit) {
+    try {
+      const tweet = await Tweet.find().skip(offset).limit(limit);
     } catch (error) {
       console.log(error);
     }
