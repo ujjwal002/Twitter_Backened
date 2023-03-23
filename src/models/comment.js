@@ -13,6 +13,6 @@ const commentSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Comment = mongoose.model("Comment", tweetSchema);
+const Comment = mongoose.model("Comment", commentSchema);
 
 module.exports = Comment;
