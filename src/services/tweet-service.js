@@ -1,14 +1,15 @@
-const { TweetRepository, HastagRepository } = require("../repository/index");
+import { TweetRepository, HashtagRepository } from "../repository/index.js";
 
 class TweetService {
   constructor() {
     this.tweetRepository = new TweetRepository();
-    this.hashtagRepository = new HastagRepository();
+    this.hashtagRepository = new HashtagRepository();
   }
 
   async create(data) {
     console.log(data);
     const content = data.content;
+    console.log(content);
     const tags = content
       .match(/#[a-zA-Z0-9_]+/g)
       .map((tag) => tag.substring(1).toLowerCase()); // this regex extracts hashtags
@@ -33,4 +34,4 @@ class TweetService {
   }
 }
 
-module.exports = TweetService;
+export default TweetService;

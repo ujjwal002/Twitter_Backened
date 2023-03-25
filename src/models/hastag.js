@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const hastagSchema = new mongoose.Schema(
   {
@@ -18,4 +18,4 @@ const hastagSchema = new mongoose.Schema(
 
 const Hastag = mongoose.model("Hastag", hastagSchema);
 
-module.exports = Hastag;
+export default Hastag;

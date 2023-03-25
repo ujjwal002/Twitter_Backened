@@ -1,4 +1,4 @@
-const Hastag = require("../models/hastag");
+import Hastag from "../models/hastag.js";
 // const Hastags = require("../models/hastag");
 
 class HastagRepository {
@@ -48,4 +48,4 @@ class HastagRepository {
   }
 }
 
-module.exports = HastagRepository;
+export default HastagRepository;
