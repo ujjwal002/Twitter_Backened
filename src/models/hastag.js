@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const hastagSchema = new module.Schema(
+const hastagSchema = new mongoose.Schema(
   {
     title: {
       type: String,
