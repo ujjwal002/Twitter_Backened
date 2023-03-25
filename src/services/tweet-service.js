@@ -7,6 +7,7 @@ class TweetService {
   }
 
   async create(data) {
+    console.log("hii");
     console.log(data);
     const content = data.content;
     console.log(content);
